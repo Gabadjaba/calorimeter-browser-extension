@@ -1,0 +1,56 @@
+<script lang="ts" setup></script>
+
+<template>
+  <div>
+    <img src="/icon-with-shadow.svg" />
+    <h1>CaloMeter</h1>
+    <p>
+      Считает калории на сайте Яндекс Еды <br />
+      (пока только в магазинах Вкусвил, Магнит и тд..)
+    </p>
+  </div>
+</template>
+
+<style>
+html,
+body {
+  width: 300px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+}
+
+body > div {
+  height: 100%;
+  padding: 0 40px;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  opacity: 0.7;
+  margin: 0;
+}
+
+code {
+  font-size: 12px;
+  padding: 2px 4px;
+  background-color: #ffffff24;
+  border-radius: 2px;
+}
+</style>
