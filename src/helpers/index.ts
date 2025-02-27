@@ -1,9 +1,10 @@
 import { CalculatedFoodItem, FoodItem } from './indexDB/types'
 
 const UNITS: { [key: string]: number } = {
-  л: 1000,
-  г: 1,
-  мл: 1
+  'кг': 1000,
+  'л': 1000,
+  'г': 1,
+  'мл': 1
 }
 
 export const calcCalories = (
@@ -35,7 +36,7 @@ export const calcCalories = (
   }
 }
 
-export const convertToMilliliters = (value: string): number => {
+export const convertToGram = (value: string): number => {
   const unitsPattern = Object.keys(UNITS).join('|') // "л|г|мл"
   const match = value.match(
     new RegExp(`(\\d+(?:[.,]\\d+)?)\\s*(${unitsPattern})`, 'i')

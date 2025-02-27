@@ -7,17 +7,17 @@ export const DB_STORE_NAME = 'VKUSVILL'
 
 const FOOD_CARD_CLASSES = {
   cardDivName: '.fullCard_fqhmegd',
-  headerDivName: '.UiKitProductFullCard_header',
-  productValueDivName: '.ProductFullCardName_cardName',
-  productWeightDivName: '.ProductFullCardName_weight',
-  calEnergyDivName: '.UiKitProductCardEnergyValues_item',
-  calEnergyTypeDivName: '.UiKitProductCardEnergyValues_name',
-  calEnergyValueDivName: '.UiKitProductCardEnergyValues_value'
+  headerDivName: '.header_h1u97qmv',
+  productValueDivName: '.cardName_cllwzwr',
+  productWeightDivName: '.weight_w13krk95',
+  calEnergyDivName: '.item_i1okioj',
+  calEnergyTypeDivName: '.name_n8m6w79',
+  calEnergyValueDivName: '.value_v12ih2e4'
 }
 
 const FOOD_CARD_CLASSES_TO_WATCH = [
-  'UiKitProductCardEnergyValues_root',
-  'UiKitProductFullCard_header'
+  'root_rvimkt4',
+  'header_h1u97qmv'
 ]
 
 const CART_CLASSES = {
@@ -79,6 +79,7 @@ const init = () => {
             divs.forEach((div) => {
               FOOD_CARD_CLASSES_TO_WATCH.forEach((className) => {
                 if (div.classList.contains(className)) {
+                  console.log('update')
                   foodCard.saveData()
                   cart.update()
                 }

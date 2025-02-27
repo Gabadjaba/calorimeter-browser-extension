@@ -8,7 +8,6 @@
     "build": "vue-tsc && vite build"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.5",
     "vue": "^3.3"
   },
   "devDependencies": {

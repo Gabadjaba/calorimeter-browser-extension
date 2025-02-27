@@ -1,7 +1,7 @@
 import { FoodItem } from '../../../helpers/indexDB/types'
 import { FoodCardProps } from './types'
 import { Database } from '../../../helpers/indexDB'
-import { convertToMilliliters } from '../../../helpers'
+import { convertToGram } from '../../../helpers'
 
 export class FoodCard {
   cardDivName: string
@@ -37,10 +37,12 @@ export class FoodCard {
 
   private get _cardDiv(): Element | null {
     if (!this.cardDivName) return null
+    console.log('++++++++++++++++', document.querySelector(this.cardDivName))
     return document.querySelector(this.cardDivName)
   }
 
   private get _headerDiv(): Element | null {
+    console.log('++++++++++++++++', this._cardDiv)
     if (!this._cardDiv) return null
     return this._cardDiv.querySelector(this.headerDivName)
   }
@@ -56,6 +58,9 @@ export class FoodCard {
     const nameContainer = this._headerDiv.querySelector(
       this.productValueDivName
     )
+
+    console.log('-------------', nameContainer)
+    console.log(nameContainer?.textContent)
 
     if (nameContainer?.textContent) {
       return nameContainer.textContent
@@ -87,7 +92,7 @@ export class FoodCard {
     const weightContainer = this._headerDiv.querySelector(this.productWeightDivName)
 
     if (weightContainer?.firstChild && weightContainer.firstChild.nodeValue) {
-      const value = convertToMilliliters(weightContainer.firstChild.nodeValue)
+      const value = convertToGram(weightContainer.firstChild.nodeValue)
 
       this._setFullCalOnCard(weightContainer, value)
 
